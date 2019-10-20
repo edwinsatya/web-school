@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--css boostrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--my css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="animate.min.css">
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/home.css">
+    <title>View List</title>
+</head>
+
+<body>
+
+    <!--nav-->
+    <%- include('partials/navbar') %>
+    <!--endNav-->
+
+    <!--table list teachers-->
+    <div class="container mt-5">
+        <h2 class="animated zoomIn">List Teachers : </h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="animated bounceInRight">ID</th>
+                    <th scope="col" class="animated bounceInRight delay-2s">FirstName</th>
+                    <th scope="col" class="animated bounceInRight delay-3s">LastName</th>
+                    <th scope="col" class="animated bounceInRight delay-4s">Email</th>
+                    <th scope="col" class="animated bounceInRight delay-5s">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% teachers.map(teacher => { %>
+                <tr>
+                    <th class="th-data" scope="row" class="animated pulse delay-5s infinite"><%= teacher.id %></th>
+                    <td class="animated pulse delay-5s infinite"><%= teacher.firstName %></td>
+                    <td class="animated pulse delay-5s infinite"><%= teacher.lastName %></td>
+                    <td class="animated pulse delay-5s infinite"><%= teacher.email %></td>
+                    <td>
+                        <a class="btn btn-primary animated jello delay-5s infinite slow"
+                            href="/updateTeacher/<%=teacher.id%>" role="button">EDIT</a>
+                        | <a class="btn btn-primary bg-danger animated tada delay-5s infinite slow"
+                            href="/deleteTeacher/<%=teacher.id%>" role="button">DELETE</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <!--table list students-->
+    <div class="container">
+        <h2 class="animated zoomIn">List Students : </h2>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" class="animated bounceInRight">ID</th>
+                    <th scope="col" class="animated bounceInRight delay-2s">FirstName</th>
+                    <th scope="col" class="animated bounceInRight delay-3s">LastName</th>
+                    <th scope="col" class="animated bounceInRight delay-4s">Email</th>
+                    <th scope="col" class="animated bounceInRight delay-5s">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% students.map(student => { %>
+                <tr>
+                    <th class="th-data" scope="row" class="animated pulse delay-5s infinite"><%= student.id %></th>
+                    <td class="animated pulse delay-5s infinite"><%= student.firstName %></td>
+                    <td class="animated pulse delay-5s infinite"><%= student.lastName %></td>
+                    <td class="animated pulse delay-5s infinite"><%= student.email %></td>
+                    <td>
+                        <a class="btn btn-primary animated jello delay-5s infinite slow"
+                            href="/updateStudent/<%=student.id%>" role="button">EDIT</a>
+                        | <a class="btn btn-primary bg-danger animated tada delay-5s infinite slow"
+                            href="/deleteStudent/<%=student.id%>" role="button">DELETE</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <!--list subjects-->
+    <div class="container">
+        <h2 class="animated zoomIn">List Subjects : </h2>
+        <table class="table table-striped table-dark">
+            <thead class="thead-primary">
+                <tr>
+                    <th scope="col" class="animated bounceInRight">ID</th>
+                    <th scope="col" class="animated bounceInRight delay-2s">SubjectName</th>
+                    <th scope="col" class="animated bounceInRight delay-3s">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% subjects.map(subject => { %>
+                <tr>
+                    <th class="th-data" scope="row" class="animated pulse delay-5s infinite"><%= subject.id %></th>
+                    <td class="animated pulse delay-5s infinite"><%= subject.subjectName %></td>
+                    <td>
+                        <a class="btn btn-primary animated jello delay-5s infinite slow"
+                            href="/updateSubject/<%=subject.id%>" role="button">EDIT</a>
+                        | <a class="btn btn-primary bg-danger animated tada delay-5s infinite slow"
+                            href="/deleteSubject/<%=subject.id%>" role="button">DELETE</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <!--my js-->
+    <script src="./js/home.js"></script>
+    <!--js boostrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

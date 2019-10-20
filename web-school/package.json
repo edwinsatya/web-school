@@ -1,0 +1,27 @@
+{
+  "name": "express-sequelize-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joyful-fox-2019/express-sequelize-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joyful-fox-2019/express-sequelize-crud/issues"
+  },
+  "homepage": "https://github.com/joyful-fox-2019/express-sequelize-crud#readme",
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.21.1"
+  }
+}
